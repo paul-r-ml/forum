@@ -107,7 +107,7 @@ if (isset($_POST['form_sent']))
 	{
 		$email1 = substr($email1,$long_test,$long_email); /*si oui, suppression de $test au debut de $email*/
 	}
-	else message($lang_common['Invalid e-mail']);
+	else message($lang_common['Invalid email']);
 	// ---------------- Fin ajout perso  --------------------------
 	if (!is_valid_email($email1))
 		$errors[] = $lang_common['Invalid email'];
