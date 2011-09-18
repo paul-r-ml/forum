@@ -30,7 +30,7 @@
 </li>
 <li class="level2"><div class="li"> <a href="/wiki/doku.php?id=camps_de_base" class="wikilink1" title="camps_de_base">Camps de base</a></div>
 </li>
-<li class="level2"><div class="li"> <a href="http://www.randonner-leger.org/forum/viewtopic.php?pid=194231#p194231" class="urlextern" title="boutique">Boutique</a></div>
+<li class="level2"><div class="li"> <a href="http://www.randonner-leger.org/forum/viewtopic.php?pid=194231#p194231" class="urlextern" title="produit promotionnel">Produit promotionnel</a></div>
 </li>
 </ul>
 
