@@ -63,7 +63,7 @@ require PUN_ROOT.'header.php';
 
 ?>
 <div class="blockform">
-	<h2><span><?php echo $lang_common['User list'] ?></span></h2>
+	<h2><span><?php echo $lang_search['User search'] ?></span></h2>
 	<div class="box">
 		<form id="userlist" method="get" action="userlist.php">
 			<div class="inform">
@@ -76,11 +76,10 @@ require PUN_ROOT.'header.php';
 							<option value="-1"<?php if ($show_group == -1) echo ' selected="selected"' ?>><?php echo $lang_ul['All users'] ?></option>
 <?php
 
-if ($pun_user['is_admmod']) {
-$result = $db->query('SELECT g_id, g_title FROM '.$db->prefix.'groups WHERE g_id!='.PUN_GUEST.' ORDER BY g_id') or error('Unable to fetch user group list', __FILE__, __LINE__, $db->error());
-} else {
-  $result = $db->query('SELECT g_id, g_title FROM '.$db->prefix.'groups WHERE g_id=1 OR g_id=2 OR g_id=4 ORDER BY g_id') or error('Unable to fetch user group list', __FILE__, __LINE__, $db->error());
-}
+if ($pun_user['is_admmod'])
+	$result = $db->query('SELECT g_id, g_title FROM '.$db->prefix.'groups WHERE g_id!='.PUN_GUEST.' ORDER BY g_id') or error('Unable to fetch user group list', __FILE__, __LINE__, $db->error());
+else
+	$result = $db->query('SELECT g_id, g_title FROM '.$db->prefix.'groups WHERE g_id=1 OR g_id=2 OR g_id=4 ORDER BY g_id') or error('Unable to fetch user group list', __FILE__, __LINE__, $db->error());
 
 while ($cur_group = $db->fetch_assoc($result))
 {
@@ -123,6 +122,7 @@ while ($cur_group = $db->fetch_assoc($result))
 </div>
 
 <div id="users1" class="blocktable">
+	<h2><span><?php echo $lang_common['User list'] ?></span></h2>
 	<div class="box">
 		<div class="inbox">
 			<table cellspacing="0">

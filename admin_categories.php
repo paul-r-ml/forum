@@ -138,7 +138,7 @@ else if (isset($_POST['update'])) // Change position and name of the categories
 		if ($cur_cat['name'] == '')
 			message($lang_admin_categories['Must enter name message']);
 
-		if ($cur_cat['order'] == '' || preg_match('/[^0-9]/', $cur_cat['order']))
+		if ($cur_cat['order'] == '' || preg_match('%[^0-9]%', $cur_cat['order']))
 			message($lang_admin_categories['Must enter integer message']);
 
 		$db->query('UPDATE '.$db->prefix.'categories SET cat_name=\''.$db->escape($cur_cat['name']).'\', disp_position='.$cur_cat['order'].' WHERE id='.intval($cat_id)) or error('Unable to update category', __FILE__, __LINE__, $db->error());
@@ -170,7 +170,7 @@ generate_admin_menu('categories');
 	<div class="blockform">
 		<h2><span><?php echo $lang_admin_categories['Add categories head'] ?></span></h2>
 		<div class="box">
-			<form method="post" action="admin_categories.php?action=foo">
+			<form method="post" action="admin_categories.php">
 				<div class="inform">
 					<fieldset>
 						<legend><?php echo $lang_admin_categories['Add categories subhead'] ?></legend>
@@ -192,7 +192,7 @@ generate_admin_menu('categories');
 
 <?php if ($num_cats): ?>		<h2 class="block2"><span><?php echo $lang_admin_categories['Delete categories head'] ?></span></h2>
 		<div class="box">
-			<form method="post" action="admin_categories.php?action=foo">
+			<form method="post" action="admin_categories.php">
 				<div class="inform">
 					<fieldset>
 						<legend><?php echo $lang_admin_categories['Delete categories subhead'] ?></legend>
@@ -222,7 +222,7 @@ generate_admin_menu('categories');
 
 <?php if ($num_cats): ?>		<h2 class="block2"><span><?php echo $lang_admin_categories['Edit categories head'] ?></span></h2>
 		<div class="box">
-			<form method="post" action="admin_categories.php?action=foo">
+			<form method="post" action="admin_categories.php">
 				<div class="inform">
 					<fieldset>
 						<legend><?php echo $lang_admin_categories['Edit categories subhead'] ?></legend>

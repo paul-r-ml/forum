@@ -33,5 +33,6 @@ $lang_register = array(
 'Pass info'					=>	'Passwords must be at least 4 characters long. Passwords are case sensitive.',
 'Email info'				=>	'You must enter a valid email address as your randomly generated password will be sent to that address.',
 'Confirm email'				=>	'Confirm email address',
+'Antispam info'				=>	'To prevent robots from registering automatically, <strong>your registration will not be valid unless the <u>first</u> email below starts with a three letters code </strong>. You will find the code once you\'ve read (entirely ;-) !) the <a href="/wiki/doku.php?id=guide:charte_forum">Rules</a>.',
 
 );

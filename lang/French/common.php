@@ -64,7 +64,7 @@ $lang_common = array(
 'and'				=>	'et',
 'Image link'			=>	'image',	// This is displayed (i.e. <image>) instead of images when "Show images" is disabled in the profile
 'wrote'				=>	'a écrit&#160;:',	// For [quote]'s
-'Mailer'			=>	'E-mail automatique',	// As in "MyForums Mailer" in the signature of outgoing e-mails
+'Mailer'			=>	'E-mail automatique %s',	// As in "MyForums Mailer" in the signature of outgoing e-mails
 'Important information'		=>	'Information importante',
 'Write message legend'		=>	'Veuillez composer votre message et l\'envoyer',
 'Previous'                      =>      'Précédent',
@@ -168,6 +168,15 @@ $lang_common = array(
 
 // Admin related stuff in the header
 'New reports'					  =>	    'De nouveaux signalements ont été envoyés',
-'Maintenance mode enabled'			  =>	    'Le mode maintenance est activé&#160;!'
+'Maintenance mode enabled'			  =>	    'Le mode maintenance est activé&#160;!',
+
+// Units for file sizes
+'Size unit B'					=>  '%s O',
+'Size unit KiB'					=>  '%s KiO',
+'Size unit MiB'					=>  '%s MiO',
+'Size unit GiB'					=>  '%s GiO',
+'Size unit TiB'					=>  '%s TiO',
+'Size unit PiB'					=>  '%s PiO',
+'Size unit EiB'					=>  '%s EiO',
 
 ); 

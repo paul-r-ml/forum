@@ -681,8 +681,13 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 }
 
 .pun .blocktable .tclcon div {
+	display: inline;
 	width: 100%;
 	overflow: hidden;
+}
+
+.pun .blocktable .tclcon .modlist {
+	display: inline;
 }
 
 .pun .icon {
@@ -1127,9 +1132,16 @@ MAIN FORMS
 	padding: 7px 0;
 }
 
-.pun fieldset label {
-	display: block;
-	padding: 0 0 7px 0;
+.pun fieldset .checklist-item {
+	clear: both;
+}
+
+.pun .multiselect {
+	float: left;
+}
+
+.pun fieldset .fld-input {
+	float: left;
 }
 
 .pun label em {
@@ -1166,10 +1178,11 @@ MAIN FORMS
 
 .pun .rbox {
 	padding: 3px 0;
+	clear: both;
 }
 
 .pun .rbox label {
-	padding: 3px 0 3px 1.75em;
+	padding: 3px 0 3px 0em;
 	position: relative;
 	min-height: 1px;
 }
@@ -1180,8 +1193,7 @@ MAIN FORMS
 }
 
 .pun .rbox input {
-	margin: 3px 0.75em 3px -1.75em;
-	float: left;
+	margin: 3px 0.75em 3px 0em;
 	position: relative;
 	vertical-align: middle;
 	padding: 0;
