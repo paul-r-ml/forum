@@ -1,5 +1,5 @@
 <?php // Retrieving smilies set enabled
-$config_content = trim(file_get_contents(PUN_ROOT.'plugins/ezbbc/config.php'));
+$config_content = trim(file_get_contents(PUN_ROOT.'plugins/ezbbc/config.txt'));
 $config_item = explode(";", $config_content);
 $ezbbc_smilies_set = $config_item[3];
 if ($ezbbc_smilies_set == 'ezbbc_smilies'):

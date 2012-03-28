@@ -84,8 +84,8 @@ if (!defined('PUN_ALLOW_INDEX'))
 
 ?>
 <title><?php echo generate_page_title($page_title, $p) ?></title>
+<?php require PUN_ROOT.'plugins/ezbbc/ezbbc_head.php'; ?>
 <link rel="stylesheet" type="text/css" href="style/<?php echo $pun_user['style'].'.css' ?>" />
-<?php require 'plugins/ezbbc/ezbbc_head.php'; ?>
 <?php
 
 if (defined('PUN_ADMIN_CONSOLE'))

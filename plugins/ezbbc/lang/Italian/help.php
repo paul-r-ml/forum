@@ -1,17 +1,25 @@
-<?php // Retrieving style folder
-$config_content = trim(file_get_contents('../../config.php'));
+<?php 
+// Including common.php file to have access to fluxBB functions
+define('PUN_ROOT', '../../../../');
+require PUN_ROOT.'include/common.php';
+// Retrieving style folder
+$config_content = trim(file_get_contents(PUN_ROOT.'plugins/ezbbc/config.txt'));
 $config_item = explode(";", $config_content);
 $ezbbc_style_folder = $config_item[2];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="../../style/<?php echo $ezbbc_style_folder ?>/ezbbc.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo PUN_ROOT.'style/'.$pun_user['style'].'.css' ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo PUN_ROOT.'plugins/ezbbc/style/'.$ezbbc_style_folder.'/ezbbc.css' ?>" />
 <title>Aiuto sulla EZBBC Toolbar</title>
 </head>
-<body id="toolbar_help">
-
+<body>
+<div class="pun">
+<div class="punwrap">
+<div id="brdmain">
+<div  id="ezbbc_help">
         <ul id="menu">
                 <li><a href="#common_buttons">Pulsanti comuni</a></li>
                 <li><a href="#color_button">Pulsante di colorazione</a></li>
@@ -81,7 +89,7 @@ $ezbbc_style_folder = $config_item[2];
         <h2>Pulsanti per colorare e inserire intestazioni (titoli)</h2>
                 <h3 id="color_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/color.png" alt="Colorize" /> Pulsante di colorazione</h3>
                         <p>
-                        Il pulsante di colorazione serve per attribuire a un testo un colore. Selezionare il testo da colorare e quindi inserire nel campo il nome del colore desiderato (esempio: &quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;purple&quot;…) - si veda <a href="http://www.somacon.com/p142.php" onclick="window.open(this.href, 'Color_name', 'height=500, width=310, top=10, left=650, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=yes, status=no'); return false;">questa pagina</a> per una lista completa dei colori disponibili - oppure il codice esadecimale corrispondente (esempio: #dddddd) - si veda  <a href="http://www.colorpicker.com/" title="Open the color picker" onclick="window.open(this.href, 'Color_picker', 'height=430, width=550, top=10, left=300, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=yes, status=no'); return false;">questa pagina</a> per una lista. Se non è stato selezionato alcun testo, la frase "Testo da colorare" comparirà già selezionata tra i marcatori<code> [color][/color] per essere modificata</code>.<br/>
+                        Il pulsante di colore sar&agrave; usato per colorare il testo selezionato. Selezionare prima il testo al quale cambiare il colore e inserire quindi nella finestra il nome del colore (red, green, blue, purple, …) - per l'elenco completo vedere <a href="http://www.somacon.com/p142.php" onclick="window.open(this.href, 'Color_name', 'height=500, width=310, top=10, left=650, toolbar=no, menubar=no, location=no, resizable=yes, scrollbars=yes, status=no'); return false;">questa pagina</a> - o un codice colore esadecimale (es.: #DDDDDD) - il codice comparir&agrave; automaticamente usando la tavolozza colori. Se nessun testo sar&agrave; selezionato, la frase "Testo da colorare" contenuta nei tag <code>[color]</code> sar&agrave; visualizzata per poterla modificare.<br/>
                         Esempio di formattazione utilizzando il pulsante color: <code>[color=red]Testo selezionato[/color]</code>.</p>
                         <h3 id="heading_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/heading.png" alt="Heading" /> Pulsante di intestazione (titolo)</h3>
                         <p>
@@ -107,7 +115,7 @@ $ezbbc_style_folder = $config_item[2];
                                         <tr>
                                         <th>Marcatori HTML</th>
                                         <td><code>&lt;span style=&quot;color:…&quot; &gt;…&lt;/span&gt;</code></td>
-                                        <td><code>&lt;h4&gt;…&lt;/h4&gt;</code></td>
+                                        <td><code>&lt;h5&gt;…&lt;/h5&gt;</code></td>
                                         </tr>
                                 </tbody>
                         </table>
@@ -115,40 +123,45 @@ $ezbbc_style_folder = $config_item[2];
         <h2>Pulsanti per inserire indirizzi web, email e immagini</h2>
                 <h3 id="url_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/link.png" alt="URL" /> Pulsante indirizzo web </h3>
                         <p>
-                        Il pulsante di indirizzo web serve ad inserire un collegamento (hyperlink) su un testo. Selezionare un testo sul quale inserire un collegamento e cliccare sul pulsante. Selezionando un testo che non è un indirizzo web (diverso da, per esempio, http://www.sito.est), comparirà un modulo per inserirlo, altrimenti saranno inseriti semplicemente i marcatori necessari. Premendo il pulsante senza aver selezionato alcun testo, comparirà prima un modulo per inserire l'indirizzo del collegamento, e, quindi, un secondo modulo nel quale inserire il testo sul quale applicarlo (il testo è opzionale).<br />
+                        Selezionando del testo prima di cliccare sul pulsante dell'indirizzo apparir&agrave; una finestra col testo stesso come etichetta, alcuni pulsanti di selezione per scegliere il tipo di link da inserire e altri campi in cui inserire l'indirizzo e l'id. Gli indirizzi supportati iniziano con: <code>http://</code>, <code>https://</code>, <code>ftp://</code>, o <code>www.</code>. L'id deve essere un numero intero. Non selezionando alcun testo, cliccando sul pulsante per gli indirizzi apparir&agrave; una finestra dalla quale scegliere il tipo di link (Web, Discussione, Messaggio, Forum, o Utente), l'etichetta dell'indirizzo (opzionale) e l'indirizzo.<br />
                         Esempio di formattazione utilizzando il pulsante url: <code>[url=http://www.indirizzoweb.est]testo da trasformarte in link[/url]</code>.                        </p>
                         <h3 id="email_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/email.png" alt="E-mail" /> Pulsante email</h3>
                         <p>
-                        Il pulsante di email serve ad inserire un collegamento ad una email (esempio: &quot;mailto:nome@dominio.est&quot;). Selezionare un indirizzo email sul quale inserire il collegamento e cliccare sul pulsante. Selezionando un testo che non è un indirizzo email, comparirà un modulo nel quale inserirlo. &Egrave; necessario inserire un indirizzo email valido (comprensivo di @). Premendo il pulsante senza aver selezionato alcun testo, comparirà un modulo per inserire l'indirizzo del collegamento, e, quindi, un secondo modulo nel quale inserire il testo su cui applicarlo (il testo è opzionale).<br />
+                        Selezionando del testo prima di cliccare sul pulsante dell'indirizzo email apparir&agrave; una finestra col testo stesso come etichetta, sar&agrave; quindi necessario inserire l'indirizzo. &egrave; necessario inserire un indirizzo email valido (contenente una <code>@</code> e un <code>.</code>). Non selezionando alcun testo, cliccando sul pulsante per gli indirizzi email apparir&agrave; una finestra grazie alla quale inserire l'indirizzo email e l'etichetta relativa (opzionale).<br />
                         Esempio di formattazione utilizzando il pulsante email: <code>[email=indirizzo@email.est]mia email[/email]</code>.                        </p>
                         <h3 id="image_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/image.png" alt="Image" /> Pulsante immagine</h3>
                         <p>
-                        Il pulsante di inserimento immagine serve ad inserire una immagine. Selezionare l'indirizzo web dell'immagine e premere sul pulsante: saranno inseriti i marcatori necessari e un nuovo modulo per aggiungere il realtivo testo alternativo   (l'attributo <code>alt</code> nell'HTML). Selezionando un testo che non è un indirizzo web,   comparirà un modulo in cui inserirlo: il testo selezionato sarà utilizzato come testo alternativo. Premendo il pulsante senza aver selezionato alcun testo, comparirà prima un modulo per inserire l'indirizzo del collegamento, e, quindi, un secondo modulo nel quale inserire il testo alternativo (il testo è opzionale)<br />
-                        Esempio di formattazione utilizzando il pulsante di inserimento immagine: <code>[img=testo alternativo]http://www.sito.est/immagine.jpg[/img]</code>.                        </p>
+						Selezionando del testo prima di cliccare sul pulsante per inserire immagini apparir&agrave; una finestra col testo stesso come testo alternativo (l'attributo <code>alt</code> nell'HTML), sar&agrave; quindi necessario inserire l'indirizzo dell'immagine. Non selezionando alcun testo, If nothing has been selected, cliccando sul pulsante per l'inserimento immagini apparir&agrave; una finestra grazie alla quale inserire il testo alternativo (opzionale) e l'indirizzo dell'immagine.<br />
+                        Esempio di formattazione utilizzando il pulsante di inserimento immagine: <code>[img=testo alternativo]http://www.sito.est/immagine.jpg[/img]</code>.
+						</p>
                         <h3>Sommario</h3>
                         <table>
                                 <tbody>
                                         <tr>
                                         <th>Pulsanti</th>
                                         <td><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/link.png" alt="URL" /></td>
+										<td><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/link.png" alt="Topic, Post, Forum, or User" /></td>
                                         <td><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/email.png" alt="E-mail" /></td>
                                         <td><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/image.png" alt="Image" /></td>
                                         </tr>
                                         <tr>
                                         <th>Utilizzo</th>
                                         <td>Indirizzo web </td>
+										<td>A Topic, Post, Forum, or User link</td>
                                         <td>Indirizzo email </td>
                                         <td>Immagine</td>
                                         </tr>
                                         <tr>
                                         <th>Marcatori BBCode</th>
                                         <td><code>[url=http://sitoweb.est]…[/url]</code></td>
+										<td><code>[topic=id]…[/topic], [post=id]…[/post], [forum=id]…[/forum], [user=id]…[/user]</code></td>
                                         <td><code>[email=indirizzo@dominio.est]…[/email]</code></td>
                                         <td><code>[img=testo alternativo]…[/img]</code></td>
                                         </tr>
                                         <tr>
                                         <th>Marcatori HTML</th>
                                         <td><code>&lt;a href="http://…"&gt;…&lt;/a&gt;</code></td>
+										<td><code>&lt;a href="http://…"&gt;…&lt;/a&gt;</code></td>
                                         <td><code>&lt;a href="mailto:…"&gt;…&lt;/a&gt;</code></td>
                                         <td><code>&lt;img src="…" alt="…" /&gt;</code></td>
                                         </tr>
@@ -158,20 +171,22 @@ $ezbbc_style_folder = $config_item[2];
         <h2>Pulsanti di citazione e inserimento codice</h2>
                 <h3 id="quote_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/quote.png" alt="Quote" /> Pulsante di citazione</h3>
                         <p>
-                        Premendo il pulsante senza aver selezionato alcun testo, comparirà un modulo per inserire il testo da citare e, quindi, un secondo modulo per inserire il nome dell'autore citato (il nome è opzionale). Se un testo è stato selezionato, comparirà un modulo nel quale inserire  il nome dell'autore citato.<br />
+                        Nella finestra che appare &egrave; possibile selezionare il nome dell'autore del testo citato (opzionale) e il testo da citare. Se un testo &egrave; stato selezionato prima di cliccare sul pulsante, sar&agrave; considerato come testo da citare.<br />
                         Esempio di formattazione utilizzando il pulsante di citazione:<br />
                         <code>[quote=nome autore]<br />
                         testo da citare
                         <br />
-                        [/quote]</code>                        </p>
+                        [/quote]</code>
+						</p>
                 <h3 id="code_button"><img class="button" src="../../style/<?php echo $ezbbc_style_folder ?>/images/code.png" alt="Code" /> Pulsante di inserimento codice</h3>
                         <p>
-                        Premendo il pulsante senza aver selezionato alcun testo, comparirà un modulo per inserire il codice e, quindi, un secondo modulo per inserire il linguaggio utilizzato (php, html, javascript... - opzionale). Se un testo è stato selezionato, comparirà un modulo nel quale inserire il linguaggio utilizzato.<br />
+                        Nella finestra che appare &egrave; possibile scegliere il linguaggio da un menu a tendina (php, html, Javascript… - opzionale) e incollare le linee di codice da inserire. Se un testo &egrave; stato selezionato prima di cliccare sul pulsante, sar&agrave; considerato come codice.<br />
                         Esempio di formattazione utilizzando il pulsante di inserimento codice:<br />
                         <code>[code]<br/>
                         [== linguaggio ==]<br />
                         Codice<br />
-                        [/code]</code>.                        </p>
+                        [/code]</code>.
+						</p>
                 <h3>Sommario</h3>
                         <table>
                                 <tbody>
@@ -201,7 +216,8 @@ $ezbbc_style_folder = $config_item[2];
         <h2 id="list_buttons">Pulsanti per liste </h2>
                 <h3>Utilizzo</h3>
                         <p>
-                        Selezionare più righe e cliccare sul pulsante: ciascuna di esse sarà automaticamente trasformata in un elemento della lista (puntata, numerica o alfabetica che sia). Premendo il pulsante senza aver selezionato alcuna riga, comparirà  un modulo per inserire il testo della prima riga, e, quindi, un secondo modulo che spiega ciò che è necessario fare quando si desidera interrompere l'inserimento di nuovi elementi alla lista, ovvero: lasciare il campo vuoto e premere su Ok.                        </p>
+                        Selezionare più righe e cliccare sul pulsante: ciascuna di esse sarà automaticamente trasformata in un elemento della lista (puntata, numerica o alfabetica che sia). If you didn't select anything, a prompt will popup and ask you for the first item of the list. You can then add more items by clicking on the "Add an item" link or by pressing the "enter" key. When finished, validate the list by clicking on the right button (the fields left blank will be ignored).
+						</p>
                         <h3>Sommario</h3>
                         <table>
                                 <tbody>
@@ -332,6 +348,9 @@ $ezbbc_style_folder = $config_item[2];
                                         
                                 </tbody>
                         </table>
-
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

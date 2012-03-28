@@ -1,52 +1,111 @@
-#ezbbctoolbar .button, #ezbbctoolbar .smiley {
-	border: 1px inset #ccc;
-	margin-right: 1px;
+/* ********************* */
+/* Squared buttons style */
+/* ********************* */
+
+/* Toolbar style */
+/* ************* */
+
+/* Common styles */
+#ezbbctoolbar {
+        display: inline;
+        position: relative;
 }
 
-#ezbbctoolbar .button:hover, #ezbbctoolbar .smiley:hover {
+#ezbbctoolbar a {
+	display: block;
+	float: left;
+	text-decoration: none;
+	border: 1px inset #ccc;
+	margin: 1px;
+	width: 20px;
+	height: 20px;
+}
+
+#ezbbctoolbar .smiley{
+	margin: 1px;
+	border: 1px inset #ccc;
+	}
+
+#ezbbctoolbar a:hover, #ezbbctoolbar .smiley:hover {
 	border: 1px outset #BFBFBF;
 	cursor: pointer;
 }
 
-#ezbbctoolbar a.toolbar_help {
-        margin-left: 30px;
-        text-decoration: none;
-        border: none;
+#ezbbctoolbar a span {
+	display: none;
 }
 
-#ezbbctoolbar a.toolbar_help img {
-        border: none;
-        vertical-align: top;
+/* Backgrounds for each button */
+#ezbbctoolbar a#bold {
+	background: url(images/toolbar.png) no-repeat 0 0;
+}
+#ezbbctoolbar a#underline {
+	background: url(images/toolbar.png) no-repeat -20px 0;
+}
+#ezbbctoolbar a#italic {
+	background: url(images/toolbar.png) no-repeat -40px 0;
+}
+#ezbbctoolbar a#strike {
+	background: url(images/toolbar.png) no-repeat -60px 0;
+}
+#ezbbctoolbar a#delete {
+	background: url(images/toolbar.png) no-repeat -80px 0;
+}
+#ezbbctoolbar a#insert {
+	background: url(images/toolbar.png) no-repeat -100px 0;
+}
+#ezbbctoolbar a#emphasis {
+	background: url(images/toolbar.png) no-repeat -120px 0;
+}
+#ezbbctoolbar a#color {
+	background: url(images/toolbar.png) no-repeat -140px 0;
+}
+#ezbbctoolbar a#heading {
+	background: url(images/toolbar.png) no-repeat -160px 0;
+}
+#ezbbctoolbar a#url {
+	background: url(images/toolbar.png) no-repeat -220px 0;
+}
+#ezbbctoolbar a#email {
+	background: url(images/toolbar.png) no-repeat -180px 0;
+}
+#ezbbctoolbar a#image {
+	background: url(images/toolbar.png) no-repeat -240px 0;
+}
+#ezbbctoolbar a#quote {
+	background: url(images/toolbar.png) no-repeat -200px 0;
+}
+#ezbbctoolbar a#code {
+	background: url(images/toolbar.png) no-repeat -260px 0;
+}
+#ezbbctoolbar a#ulist {
+	background: url(images/toolbar.png) no-repeat -280px 0;
+}
+#ezbbctoolbar a#olist {
+	background: url(images/toolbar.png) no-repeat -300px 0;
+}
+#ezbbctoolbar a#aolist {
+	background: url(images/toolbar.png) no-repeat -320px 0;
+}
+#ezbbctoolbar a#smiliesb {
+	background: url(images/toolbar.png) no-repeat -340px 0;
+}
+#ezbbctoolbar a#help {
+	background: url(images/toolbar.png) no-repeat -360px 0;
 }
         
 
 /* Helpfile style */
 /* ************** */
 
-body#toolbar_help {
-        margin: 0;
-        padding: 0;
-        background: #EBF1F5;
-        font-size: 100%;
-}
-
-#toolbar_help h1 {
-        margin: 0;
-        padding: 5px;
-        color: #FFF;
-        font-size: 1.5em;
-        background: #002F4F;
-        text-shadow: 1px 1px 3px #FFF;
-}
-
-#toolbar_help ul {
+#ezbbc_help ul#menu {
         float: right;
         margin: 5px;
         padding: 5px;
-        width: 15%;
+        width: 20%;
         font-size: 0.9em;
         background: #FFF;
-        border: #002F4F groove 2px;
+        border: #000 solid 1px;
         /* Rounded corners, shadow and opacity (css3) */
 	border-radius: 8px;
 	-o-border-radius: 8px;
@@ -63,35 +122,17 @@ body#toolbar_help {
         opacity: 0.9;
 }
 
-#toolbar_help li {
+#ezbbc_help ul#menu li {
         text-align: center;
         list-style-type: none;
 }
 
-
-#toolbar_help h2 {
-        margin: 5px;
-        padding: 0;
-        color: #002F4F;
-        font-size: 1.3em;
-        border-bottom: #002F4F solid 1px;
-}
-
-#toolbar_help h3 {
-        margin: 5px 5px 0 5px;
-        padding: 0;
-        color: #005F31;
-        font-size: 1.1em;
-        text-shadow: 1px 1px 5px #AFAFAF;
-}
-
-#toolbar_help p {
-        text-align: justify;
+#ezbbc_help p {
         margin: 5px 10px;
         padding: 0;
 }
 
-#toolbar_help table {
+#ezbbc_help table {
         border-collapse: collapse;
         margin: 5px auto;
         padding: 0;
@@ -99,35 +140,24 @@ body#toolbar_help {
         background: #FFF;
 }
 
-#toolbar_help td {
+#ezbbc_help td {
         font-size: 0.9em;
         border: #000 1px solid;
         text-align: center;
 }
 
-#toolbar_help th {
-        background: #002F4F;
-        color: #FFF;
-        border: #FFF 1px solid;
+#ezbbc_help th {
+        border: #000 1px solid;
+		background: #DDD;
         font-size: 0.8em;
+        width: 15%;
 }
 
-#toolbar_help .button {
+#ezbbc_help .button {
 	vertical-align: middle;	
 }
 
-#toolbar_help code {
-	color: #AFAFAF;   	
-}
-
-#toolbar_help a {
-        color: #2F71BF;
-        text-decoration: none;
-        border-bottom: #2F71BF dashed 1px;
-}
-
-#toolbar_help a:hover {
-        text-shadow: 3px 3px 4px #FFF;
-        color: #EF8100;
-        border-color: #EF8100;
+#ezbbc_help code {
+        color: #FFF;
+	background: #C4C2C2;   	
 }

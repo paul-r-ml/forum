@@ -39,7 +39,7 @@ if (!defined('PUN'))
 $re_list = '%\[list(?:=([1a*]))?+\]((?:[^\[]*+(?:(?!\[list(?:=[1a*])?+\]|\[/list\])\[[^\[]*+)*+|(?R))*)\[/list\]%ie';
 
 // Here you can add additional smilies if you like (please note that you must escape single quote and backslash)
-require './plugins/ezbbc/ezbbc_smilies1.php';
+require PUN_ROOT.'plugins/ezbbc/ezbbc_smilies1.php';
 
 //
 // Make sure all BBCodes are lower case and do a little cleanup
@@ -813,7 +813,7 @@ function do_smilies($text)
 	foreach ($smilies as $smiley_text => $smiley_img)
 	{
 		if (strpos($text, $smiley_text) !== false)
-			require './plugins/ezbbc/ezbbc_smilies2.php';
+			require PUN_ROOT.'plugins/ezbbc/ezbbc_smilies2.php';
 	}
 
 	return substr($text, 1, -1);

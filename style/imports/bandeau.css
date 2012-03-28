@@ -1,0 +1,33 @@
+/* Modif couleur sujets �pingl�s */
+.stickytext {color:red; font-weight:bold;}
+/****************************************************************/
+/* 1.bis PARAMETRES du BANDEAU */
+/****************************************************************/
+ 
+#bandeau {
+	border-left: 1px solid #d4d4d4;
+	border-right: 1px solid #d4d4d4;
+	background: url(http://www.randonner-leger.org/wiki/lib/tpl/RL/images/bandeau3.jpg) repeat-x;
+	height: 60px;
+	margin: 0px 0px 0 152px;
+}
+ 
+#bandeau #searche {
+	text-align: center;
+	float:right;
+	margin-top:36px;
+	height: 22px;
+	width: 330px;
+	border:0;
+	padding:2px 0 0 0;
+	background: #d4d4d4;
+	border-radius: 20px 0 0 0;
+	font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+}
+ 
+#bandeau #searche input, #bandeau #searche select {
+	padding:0;
+	background-color: #2a2a2a;
+	border: 1px solid #000;
+	color: #d4d4d4
+}

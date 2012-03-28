@@ -403,13 +403,13 @@ echo "<br />".$lang_uploadimg['Exist message']." <strong>".$_FILES['imagefile'][
 			{
 				if ($currwidth > $currheight)
 				{
-					$jwidth = "640";   // Maximum Width For Resized Images
-					$jheight = "480";   // Maximum Height For Resized Images
+					$jwidth = "800";   // Maximum Width For Resized Images
+					$jheight = "600";   // Maximum Height For Resized Images
 				}
 				else
 				{
-					$jwidth = "480";   // Maximum Width For Resized Images
-					$jheight = "640";   // Maximum Height For Resized Images
+					$jwidth = "600";   // Maximum Width For Resized Images
+					$jheight = "800";   // Maximum Height For Resized Images
 				}   
 			}
       
@@ -475,6 +475,19 @@ echo "<br />".$lang_uploadimg['Exist message']." <strong>".$_FILES['imagefile'][
 							$jheight = "640";   // Maximum Height For Resized Images
 						}
 				}
+                if ($resizedim == "800x600")
+                {
+                        if ($currwidth > $currheight)
+                        {
+                            $jwidth = "800";   // Maximum Width For Resized Images
+                            $jheight = "600";   // Maximum Height For Resized Images
+                        }
+                        else
+                        {
+                            $jwidth = "600";   // Maximum Width For Resized Images
+                            $jheight = "800";   // Maximum Height For Resized Images
+                        }
+                }
 	}
 			
 
@@ -713,6 +726,7 @@ require PUN_ROOT.'footer.php';
 	<option>160x120 (<?php echo $lang_uploadimg['Thumbnail'] ?>)</option>
 	<option selected="selected">320x240 (<?php echo $lang_uploadimg['Websites and email'] ?>)</option>
 	<option>640x480 (<?php echo $lang_uploadimg['Message boards'] ?>)</option>
+    <option>800x600 (Concours photo)</option>
 	</select>
 	<?php } ?>
 

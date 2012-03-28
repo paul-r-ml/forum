@@ -8,6 +8,11 @@ The code is based on a tutorial published by Thunderseb on the French site "Le s
 ####################
 The icons are based on the Tango icons set: http://tango.freedesktop.org/Tango_Icon_Library
 
+###############
+# ColorPicker #
+###############
+The colorpicker called "JSColor" is a simple & user-friendly color picker for HTML forms: http://jscolor.com/
+
 ################
 # Translations #
 ################

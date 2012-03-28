@@ -119,11 +119,6 @@
 	text-align: left;
 }
 
-#users2 .tcl, #users2 .tc3, #users2 .tc5, #bans1 .tcl, #bans1 .tc3, #bans1 .tc5, #bans1 .tc6 {
-	width: 15%;
-	text-align: left;
-}
-
 #users2 th.tcmod {
 	text-align: center;
 }

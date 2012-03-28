@@ -153,6 +153,11 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 	clear: none;
 }
 
+.clearl {
+	clear: left;
+}
+
+
 /*****************************************************************
 2. COMMON STYLES
 *****************************************************************/
@@ -162,7 +167,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 
 .pun {
 	padding: 0;
-    margin: 0px 0px 12px 152px;
+    margin: 0 0 12px 152px;
 }
 
 #punredirect, #punmaint {
@@ -217,9 +222,13 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 
 #brdmain {
 	border-style: solid none;
-	border-width: 2px 0;
+	border-width: 0 0;
 	margin-bottom: 12px;
 	padding: 12px 0;
+}
+
+#brdheader {
+	margin-left: -2px;
 }
 
 #punindex #brdmain {
@@ -247,8 +256,8 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 }
 
 #announce {
-	border-style: solid none none none;
-	border-width: 2px 0 0 0;
+	border-style: solid none solid none;
+	border-width: 1px 0 1px 0;
 	padding-top: 3px;
 }
 
@@ -260,7 +269,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 ----------------------------------------------------------------*/
 
 #brdtitle h1 {
-	padding: 0 0 5px 0;
+	padding: 0 0 4px 0;
 }
 
 #brddesc {
@@ -275,11 +284,14 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 }
 
 #brdmenu ul {
-	padding: 0;
+	padding: 2px 3px;
+	background: #c6cefa;
 }
 
 #brdmenu li {
 	float: left;
+	background:  #fff url(/forum/style/Air/img/buttonshadow.png) repeat-x bottom;
+	margin: 0 7px 3px 0;
 }
 
 #brdmenu a:link, #brdmenu a:visited {
@@ -287,7 +299,7 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 	border-width: 1px;
 	display: block;
 	min-width: 60px;
-	padding: 5px 16px 6px 8px;
+	padding: 1px 10px 1px 8px;
 	white-space: nowrap;
 }
 
@@ -681,13 +693,8 @@ html, body, .pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, 
 }
 
 .pun .blocktable .tclcon div {
-	display: inline;
 	width: 100%;
 	overflow: hidden;
-}
-
-.pun .blocktable .tclcon .modlist {
-	display: inline;
 }
 
 .pun .icon {
@@ -1132,16 +1139,9 @@ MAIN FORMS
 	padding: 7px 0;
 }
 
-.pun fieldset .checklist-item {
-	clear: both;
-}
-
-.pun .multiselect {
-	float: left;
-}
-
-.pun fieldset .fld-input {
-	float: left;
+.pun fieldset label {
+	display: block;
+	padding: 0 0 7px 0;
 }
 
 .pun label em {
@@ -1306,6 +1306,52 @@ MAIN FORMS
 	padding: 7px 12px;
 }
 
+.pun .multiselect {
+	float: left;
+	padding-bottom: 7px;
+}
+
+.pun .checklist {
+	border-width: 1px;
+	border-style: solid;
+	max-height: 20em;
+	width: 30em;
+	overflow: auto;
+	padding: 0.25em 0.5em;
+	margin: 0.25em 16px 0 0.15em;
+}
+
+.pun .checklist legend {
+	padding: 0;
+}
+
+.pun .checklist legend span {
+	width: auto;
+	max-width: 25em;
+}
+
+.pun .checklist .checklist-item {
+	position: relative;
+}
+
+.pun .checklist .checklist-item label {
+	padding: 0 0 0 1.75em;
+}
+
+.pun .checklist .checklist-item .fld-input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.pun .checklist .checklist-item input {
+	margin: 0;
+	height: 1.55em;
+	width: 1.55em;
+}
+
 /*****************************************************************
 PROFILES (+ ADMIN MENU)
 *****************************************************************/
@@ -1453,24 +1499,26 @@ html, body, .pun {
 ----------------------------------------------------------------*/
 
 #brdmenu {
-	background: #44699c;
+	background: #c6cefa;
+	border: 1px solid #0066b9;
 }
 
 #brdmenu a, #brdmenu a:link, #brdmenu a:visited {
-	background: #44699c;
-	border-color: #fff;
-	color: #d4dae2;
+	/*background: #44699c;*/
+	border: 1px solid #0066b9;
+	color: #000;
 }
 
 #brdmenu a:hover, #brdmenu a:active, #brdmenu a:focus {
-	background: #b50000;
-	border-color: #fff;
-	color: #fff;
+	/*background: #b50000;*/
+	border-color: #b50000;
+	color: #000;
 }
 
 li.reportlink a:link {color: red}
 
 li.reportlink a:visited{color: green}
+
 /* Main Tables
 ----------------------------------------------------------------*/
 
@@ -1641,6 +1689,15 @@ li.reportlink a:visited{color: green}
 
 #adminconsole fieldset td.nodefault {
 	background: #d59b9b;
+}
+
+.pun .multiselect {
+	color: #357082;
+}
+
+.pun .checklist {
+	background: white;
+	border-color: #ccc;
 }
 
 /* Status Indicators
