@@ -93,6 +93,8 @@ class tagManager
                                "[Vêtements]");
         
         $conseils = array("[Récit + liste]");
+		
+		$pretmateriel = array( "[Emprunt]", "[Prêt successif]", "[Prêt unique]" );
         
         // main tags list: contains association between forum ids and various tag lists
         $this->tags = array( 7 => $conseils,
@@ -100,6 +102,7 @@ class tagManager
 							 5 => $tags_basiques,
 							 20 => $tags_basiques,
 							 30 => $tags_basiques,
+							 55 => $pretmateriel,
                              11 => array($achat_vente, $tags_basiques));
         
         // showing lists
