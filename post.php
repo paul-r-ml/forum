@@ -637,6 +637,7 @@ $subject = $tag->getSubject(false);
 
 <?php
 $prefilled_message = <<<EOF
+[code]
 • Objet : [description précise - contenu exact du colis].
 • Mode de prêt : [prêt unique ou prêt successif ?]
 • Dates / durée du prêt : [Limites pour le retour de votre objet : le cachet de la poste fait foi ou pas ?]
@@ -646,6 +647,7 @@ $prefilled_message = <<<EOF
 unitaire (par défaut : 1€) pour compenser les frais totaux (envoi initial, lavage...) du propriétaire. 
 Une fois le montant total constitué, l'emprunteur n'est plus tenu de participer.
 • Amende (pour retard) : [montant librement fixé par le prêteur] - par défaut, 2€ par jour de retard).
+[/code]
 EOF;
 if ( $fid == 55 ) { $textarea_content = $prefilled_message; } else { $textarea_content = ''; }
 ?>
