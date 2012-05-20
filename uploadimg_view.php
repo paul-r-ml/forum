@@ -309,7 +309,7 @@ class File_Properties
 	// set file type
 	function setFicon_type()
 	{
-		list($this->file_type, $this->file_icon) = split("\?", GetExt($this->file_ext), 2);
+		list($this->file_type, $this->file_icon) = explode("\?", GetExt($this->file_ext), 2);
 	}
 
 	// setup all get/return methods for class vars
