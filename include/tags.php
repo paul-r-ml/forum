@@ -65,6 +65,7 @@ class tagManager
                              "[Donné]",
                              "[Troc]",
                              "[Troqué]",
+							 "[Emprunt]",
                              "[En cours]");
         
         $tags_basiques = array("[Abri]",
@@ -102,7 +103,7 @@ class tagManager
 							 5 => $tags_basiques,
 							 20 => $tags_basiques,
 							 30 => $tags_basiques,
-							 55 => $pretmateriel,
+							 55 => array($pretmateriel, $tags_basiques),
                              11 => array($achat_vente, $tags_basiques));
         
         // showing lists

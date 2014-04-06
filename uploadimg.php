@@ -184,6 +184,7 @@ function highlight(field) {
 	$imagefilename = $_FILES['imagefile']['name'];
 	$imagefilename_rl = strip_ext($imagefilename);
 	$imagefilename_ext = strtolower(end(explode('.',$imagefilename))); // get the file extension
+	$stamp = date("d-m-y");
   
 	// Transliterate all characters with accents,umlauts,ligatures and runes known to ISO-8859-1
 	$imagefilename_rl = strtr($imagefilename_rl,"\xA1\xAA\xBA\xBF\xC0\xC1\xC2\xC3\xC5\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD8\xD9\xDA\xDB\xDD\xE0\xE1\xE2\xE3\xE5\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF8\xF9\xFA\xFB\xFD\xFF","!ao?AAAAACEEEEIIIIDNOOOOOUUUYaaaaaceeeeiiiidnooooouuuyy");   
@@ -197,7 +198,7 @@ function highlight(field) {
 	// Truncate filename if longer than 100 characters
 	$imagefilename_rl = (strlen($imagefilename_rl) > 100) ? substr($imagefilename_rl, 0 , 100) : $imagefilename_rl;
 	
-	$imagefilename = $imagefilename_rl.".".$imagefilename_ext;
+	$imagefilename = $imagefilename_rl."_".$stamp.".".$imagefilename_ext;
 	$url = $file_prefix . $imagefilename;   // Set $url To Equal The Filename For Later Use
 	$getcode = "[url=".$forumurl.$idir.$file_prefix.$imagefilename."][img]".$forumurl.$tdir.$file_prefix.$imagefilename."[/img][/url]";
 	$getimg = "[img]".$forumurl.$idir.$file_prefix.$imagefilename."[/img]";
@@ -686,7 +687,19 @@ require PUN_ROOT.'footer.php';
 
 
 ?>
-
+<div class="blockform">
+<h2><span>Voir mon album</span></h2>
+	<div class="box">
+		<div class="inform">
+			<fieldset>
+				<legend>Choisissez le type de visualisation</legend>
+				<div class="infldset">
+				<p><a href="uploadimg_view.php?view=gallery"><?php echo $lang_uploadimg['My uploads'] ?></a></p>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+</div>
 
 <div class="blockform">
 	<h2><span><?php echo $lang_uploadimg['Upload image'] ?></span></h2>
@@ -749,7 +762,7 @@ require PUN_ROOT.'footer.php';
 			
 			
 
-			<p style="text-align: right"><a href="uploadimg_view.php?view=gallery"><?php echo $lang_uploadimg['My uploads'] ?></a></p>
+
 			
 			<?php 
 			if (in_array($pun_user['g_title'], $Allow_Stats))

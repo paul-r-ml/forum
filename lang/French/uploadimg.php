@@ -22,7 +22,7 @@ $lang_uploadimg = array(
 'Result'                =>  'Résultat',
 'Successful upload'     =>  'L\'image a été envoyée avec succès.',
 'Successful thumbnail'  =>  'La miniature a été créée avec succès.',
-'My uploads'            =>  'Mon album',
+'My uploads'            =>  '<a href="/forum/uploadimg_view.php?view=gallery">En diaporama</a> | <a href="/forum/uploadimg_view.php?view=list">En liste</a>',
 
 //Messages
 'No permission'         =>  'Vous n\'avez pas l\'autorisation pour envoyer des images. Contactez l\'administrateur du forum pour plus d\'informations.',

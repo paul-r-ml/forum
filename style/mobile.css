@@ -1,0 +1,1126 @@
+/*
+Mod		: FluxMobile
+Author	: Alexandre Chouinard ( x3dt )
+*/
+
+html>body #menugauche {
+  position: fixed;
+}
+
+#menugauche {
+  display : none;
+  top: 0;
+  right: 0;
+  width: 135px;
+  padding: 0.2em 0.5em 0 0;
+  background: #f6f6f6;
+  border: 1px solid #0066b9;
+  margin: 4px 0 0 1em;
+  font: 70% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+  overflow: auto;
+  max-height: 95%;
+}
+
+#menugauche ul {
+  line-height: 1.1em;
+  list-style-type: square;
+  padding: 0;
+  color: #638c9c; /*__text_alt__; du wiki */
+}
+
+#menugauche ul.level1 {
+  margin: 0 0 1em 1.3em;
+}
+
+#menugauche ul.level1  li {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+#menugauche ul.level1  li.accueil {
+  list-style-type: none;
+  list-style-image: url(/forum/style/Air/img/home1_mini.png);
+  background-repeat: no-repeat;
+  margin-left: 17px;
+}
+
+#menugauche ul.level2 {
+  margin: 0 0 1em 0;
+}
+
+#menugauche ul.level2  li {
+  color: #638c9c; /*__text_alt__; du wiki */
+  font-weight: normal;
+}
+
+#menugauche ul li.level3 {
+  list-style-type: none;
+  margin: 0 0 0 -1em;
+}
+
+
+#menugauche a:link, #menugauche a:visited {
+  color: #256ab7;
+  text-decoration: none;
+}
+
+#menugauche a:hover {
+  text-decoration: underline;
+  color: #b50000;
+}
+
+.pun table, .pun div, .pun form, .pun p, .pun h1, .pun h2, .pun h3, .pun h4, .pun h5, .pun pre, .pun blockquote, .pun ul, .pun ol, .pun li, .pun dl, .pun dt, .pun dd, .pun th, .pun td, .pun fieldset, .pun img, .pun abbr, .pun cite {
+margin : 0;
+padding : 0;
+border : 0;
+}
+.pun ul, .pun ol {
+list-style : none;
+}
+.pun .clearer, .pun .nosize {
+height : 0;
+width : 0;
+line-height : 0;
+font-size : 0;
+overflow : hidden;
+}
+.pun .clearer, .pun .clearb {
+clear : both;
+}
+.pun .nosize {
+position : absolute;
+left : -9999em;
+text-indent : -9999em;
+width : 0;
+}
+* html .inbox, * html .inform, * html .pun, * html .tclcon, * html .codebox {
+height : 1px;
+}
+.pun, .pun .inbox, .pun .inform, .pun .tclcon, .pun .codebox {
+min-height : 1px;
+}
+#brdfooter h2, #brdstats h2, #brdstats .conl dt, #brdstats .conr dt, #modcontrols dt, #searchlinks dt, div.postright h3, span.closedtext, .pun .required strong span {
+position : absolute;
+display : block;
+overflow : hidden;
+width : 0;
+left : -9999em;
+text-indent : -9999em;
+}
+.pun {
+font : 68.75%/1.4545em Verdana, Helvetica, Arial, sans-serif;
+}
+.pun table, .pun td, .pun optgroup, .pun textarea, .pun samp {
+font-size : 1em;
+font-family : verdana, helvetica, arial, sans-serif;
+}
+.pun pre, .pun code {
+font-size : 1.182em;
+font-family : consolas, monaco, "bitstream vera sans mono", "courier new", courier, monospace;
+}
+.pun pre code {
+font-size : 1em;
+}
+.pun strong {
+font-weight : bold;
+}
+.pun em {
+font-style : italic;
+}
+.pun p, .pun ul, .pun ol, .pun dl {
+font-size : 1em;
+padding : 3px 0;
+}
+.pun h2 {
+font-size : 1em;
+font-weight : normal;
+padding : 4px 7px;
+}
+.pun h3 {
+font-size : 1.091em;
+padding : 3px 0;
+}
+.pun table p, .pun table h3 {
+padding : 0;
+}
+.pun span.warntext, .pun p.warntext {
+font-weight : bold;
+}
+.pun .usercontent p, .pun .postmsg p {
+padding : 0.75em 0;
+}
+.pun .usercontent ul, .pun .postmsg ul {
+padding : 0.75em 1em 0.75em 2.5em;
+list-style : disc;
+}
+.pun .usercontent ol, .pun .postmsg ol {
+padding : 0.75em 1em 0.75em 2.5em;
+list-style : decimal;
+}
+.pun .usercontent ol.alpha, .pun .postmsg ol.alpha {
+list-style : lower-alpha;
+}
+.pun .usercontent li ol, .pun .usercontent li ul, .pun .postmsg li ol, .pun .postmsg li ul {
+padding : 0.25em 1em 0.75em 2.5em;
+}
+.pun .usercontent li p, .pun .postmsg li p {
+padding : 0;
+}
+.pun .usercontent h1 {
+font-size : 1.4em;
+font-weight : bold;
+padding : 0.75em 0 0 0;
+}
+.pun .usercontent h2 {
+font-size : 1.2em;
+font-weight : bold;
+padding : 0.75em 0 0 0;
+}
+.pun .usercontent h3 {
+font-size : 1.1em;
+font-weight : bold;
+padding : 0.75em 0 0 0;
+}
+.pun .usercontent h4, .pun .usercontent h5, .pun .usercontent h6 {
+font-size : 1em;
+font-weight : bold;
+padding : 0.75em 0 0 0;
+}
+.pun .quotebox cite {
+	font-weight : bold;
+	font-style : normal;
+	padding : 0.75em 0.75em 0 0.75em;
+}
+.pun .quotebox {
+		color: #0088CC;
+		}
+.pun span.bbu {
+text-decoration : underline;
+}
+.pun span.bbs, .pun del {
+text-decoration : line-through;
+}
+.pun .postmsg ins, #punhelp samp ins {
+text-decoration : none;
+}
+.pun div.postmsg h5, #punhelp h5 {
+font-size : 1.1em;
+font-weight : bold;
+padding : 0.75em 0 0 0;
+}
+.pun {
+margin : 12px 20px;
+}
+#brdheader {
+margin : 0 0 12px 0;
+}
+#announce, #brdstats {
+margin : 12px 0 12px 0;
+}
+.pun .blocktable, .pun .block, .pun .blockform, .pun .block2col, #postreview {
+margin-bottom : 12px;
+}
+#punindex .blocktable, .pun .blockpost {
+margin-bottom : 6px;
+}
+#postreview .blockpost {
+margin-bottom : -1px;
+}
+.pun .block2col .blockform, .pun .block2col .block {
+margin-bottom : 0;
+}
+.pun .linkst, .pun .linksb {
+margin-top : -12px;
+}
+.pun .postlinksb {
+margin-top : -6px;
+}
+.pun .box {
+border-style : solid;
+border-width : 1px;
+}
+#brdheader .box {
+border-top-width : 4px;
+}
+.pun .block .inbox, .pun .blockmenu .inbox {
+padding : 3px 6px;
+}
+#brdmenu li {
+display : inline;
+margin-right : 12px;
+}
+#brdmenu a:link, #brdmenu a:visited {
+text-decoration : none;
+}
+#brdmenu a:hover, #brdmenu a:active {
+text-decoration : underline;
+}
+#brdwelcome .conr {
+float : right;
+text-align : right;
+font-size : 0.76em;
+}
+.pun .linkst {
+padding : 8px 6px 3px 6px;
+}
+.pun .linksb, .pun .postlinksb {
+padding : 3px 6px 8px 6px;
+}
+.pun .crumbs {
+clear : both;
+width : 100%;
+overflow : hidden;
+}
+.pun .crumbs li {
+display : inline;
+white-space : nowrap;
+font-weight : bold;
+}
+.pun .pagelink {
+float : left;
+white-space : nowrap;
+}
+.pun .postlink {
+font-weight : bold;
+white-space : nowrap;
+}
+.pun .postlink, .pun .modbuttons {
+float : right;
+text-align : right;
+}
+.pun .modbuttons {
+padding : 1px 0;
+white-space : nowrap;
+}
+.pun .postlink a:link, .pun .postlink a:visited {
+text-decoration : none;
+}
+.pun .postlink a:hover, .pun .postlink a:active {
+text-decoration : underline;
+}
+#brdfooter .conl {
+float : left;
+}
+#brdfooter .conr {
+float : right;
+text-align : right;
+}
+#brdfooter #modcontrols {
+border-bottom-style : solid;
+border-bottom-width : 1px;
+text-align : center;
+}
+#brdfooter #modcontrols dd {
+display : inline;
+margin : 0 6px;
+}
+.pun table {
+width : 100%;
+border-collapse : collapse;
+border-spacing : 0;
+empty-cells : show;
+}
+.pun .blocktable table {
+table-layout : fixed;
+}
+.pun td, .pun th {
+padding : 4px 6px;
+
+text-align : left;
+font-weight : normal;
+}
+.pun .tcl {
+border-left : 0;
+width : auto;
+}
+.pun .tcmod {
+width : 10%;
+text-align : right;
+padding : 4px 0;
+overflow : hidden;
+}
+.tcl {
+width : 50%;
+}
+.pun .tcr {
+width : 35%;
+}
+.pun .tcl h3 {
+font-size : 0.98em;
+font-weight : bold;
+}
+.pun .tcl h3 span.newtext {
+font-size : 0.917em;
+}
+.pun .tcl span.newtext, .pun .tcl span.pagestext {
+white-space : nowrap;
+font-weight : normal;
+}
+.pun td span.byuser {
+white-space : nowrap;
+}
+.pun .tcl p {
+padding : 5px 0 0 0;
+}
+#punsearch #vf .tc2 {
+width : 18%;
+text-align : left;
+padding : 4px 6px;
+}
+#users1 .tcr {
+width : 25%;
+}
+#users1 .tc2 {
+width : 25%;
+text-align : left;
+padding : 4px 6px;
+}
+#debug .tcl {
+width : 10%;
+}
+#debug .tcr {
+width : 90%;
+white-space : normal;
+}
+#punindex .tcr .byuser {
+display : block;
+}
+.pun .blocktable .tclcon {
+padding : 3px 11px 0 3px;
+overflow : hidden;
+height : 1%;
+min-height : 1px;
+position : relative;
+}
+.pun .blocktable .tclcon div {
+width : 100%;
+overflow : hidden;
+}
+.pun .iposted .ipost {
+position : absolute;
+left : 0;
+font-weight : bold;
+width : 8px;
+padding-left : 4px;
+text-align : center;
+top : 0;
+}
+.pun .blockform form, .pun .fakeform {
+padding : 10px 10px 10px 10px;
+}
+.pun .forminfo {
+margin-bottom : 12px;
+padding : 9px 10px;
+border-style : solid;
+border-width : 1px;
+}
+.pun .forminfo h3 {
+font-weight : bold;
+}
+.pun .inform {
+padding-bottom : 12px;
+}
+.pun fieldset {
+padding : 9px 6px 12px 6px;
+border-style : solid;
+border-width : 1px;
+}
+.pun legend {
+padding : 0 6px;
+}
+.pun label {
+display : block;
+padding : 3px 0;
+}
+.pun label.conl {
+float : left;
+overflow : visible;
+margin-right : 10px;
+}
+.pun select {
+padding-top : 1px;
+padding-bottom : 1px;
+}
+.pun fieldset .rbox br {
+display : none;
+}
+.pun fieldset .rbox label {
+padding : 3px 0 3px 25px;
+position : relative;
+vertical-align : middle;
+}
+.pun fieldset .rbox input {
+margin : 0 9px 0 -25px;
+padding : 0;
+width : 16px;
+position : relative;
+vertical-align : middle;
+}
+.pun .txtarea {
+width : 75%;
+}
+.pun .txtarea textarea, .pun input.longinput {
+width : 100%;
+}
+.pun .bblinks {
+padding-bottom : 10px;
+padding-left : 4px;
+}
+.pun .bblinks li {
+display : inline;
+padding-right : 20px;
+}
+.pun .blockform .buttons {
+padding-left : 12px;
+}
+.pun .blockform .buttons input {
+margin-right : 8px;
+}
+#posterror ul {
+list-style : square;
+padding : 3px 0 3px 24px;
+}
+.pun .deletemsg {
+border-style : solid;
+border-width : 1px;
+padding : 6px 15px;
+}
+.pun p.actions span {
+margin-right : 12px;
+}
+.pun .block2col {
+padding-bottom : 1px;
+}
+.pun .block2col .blockform, .pun .block2col .block {
+margin-left : 17em;
+}
+.pun .blockmenu li {
+padding : 3px 0;
+font-weight : bold;
+}
+.pun .blockmenu a:link, .pun .blockmenu a:visited {
+text-decoration : none;
+}
+.pun .blockmenu a:hover, .pun .blockmenu a:active {
+text-decoration : underline;
+}
+#viewprofile dl {
+float : left;
+width : 100%;
+overflow : hidden;
+}
+#viewprofile dd {
+margin-left : 14em;
+padding : 3px;
+}
+#viewprofile dt {
+float : left;
+width : 13em;
+margin : 3px 0;
+}
+#profileavatar img {
+float : right;
+margin-left : 1em;
+}
+.pun .blockpost h2 a:link, .pun .blockpost h2 a:visited {
+text-decoration : none;
+}
+.pun .blockpost h2 a:hover, .pun .blockpost h2 a:active {
+text-decoration : underline;
+}
+.pun .blockpost h2 .conr {
+float : right;
+text-align : right;
+}
+#punsearch .blockpost h2 span {
+white-space : nowrap;
+}
+.pun .blockpost .box {
+overflow : hidden;
+}
+.pun .postleft, .pun .postfootleft {
+float : left;
+width : 18em;
+position : relative;
+overflow : hidden;
+}
+.pun .postleft dl {
+padding : 0.75em 6px;
+}
+.pun .postleft .usercontacts, .pun .postleft .icon {
+margin-top : 6px;
+}
+.pun .postleft .postavatar, .pun .postleft .usertitle {
+margin-bottom : 6px;
+display : block;
+}
+.pun .blockpost dt {
+font-size : 1.091em;
+font-weight : bold;
+}
+.pun .blockpost dt a:link, .pun .blockpost dt a:visited {
+text-decoration : none;
+}
+.pun .blockpost dt a:hover, .pun .blockpost dt a:active {
+text-decoration : underline;
+}
+.pun .postright, .pun .postfootright {
+border-left-width : 18em;
+border-left-style : solid;
+}
+#postpreview .postright {
+border-left : 0;
+}
+.pun .postright {
+padding : 0 6px;
+}
+.pun .postfootright, .pun .multidelete {
+text-align : right;
+padding-right: 10px;
+}
+.pun .postmsg {
+width : 98%;
+overflow : hidden;
+padding-bottom : 6px;
+}
+.pun .postfootright ul, .pun .postfootright div, .pun .postfootright p, .pun .postfootleft p {
+padding : 6px 6px 6px 6px;
+}
+.pun .postfootright li {
+display : inline;
+margin-left : 12px;
+}
+.pun .postfootright a:link, .pun .postfootright a:visited {
+text-decoration : none;
+}
+.pun .postfootright a:hover, .pun .postfootright a:active {
+text-decoration : underline;
+}
+.pun .codebox {
+border-style : solid;
+border-width : 1px;
+margin : 0.75em 1em;
+padding : 0;
+}
+.pun .quotebox {
+border-style : solid;
+border-width : 1px;
+margin : 0.75em 1em;
+padding : 0 0.75em;
+}
+.pun .quotebox cite {
+display : block;
+padding : 0.75em 0 0 0;
+}
+.pun .quotebox blockquote {
+width : 100%;
+overflow : hidden;
+}
+.pun .codebox pre {
+overflow : auto;
+width : 100%;
+}
+* html .pun .codebox pre {
+padding-bottom : 10px;
+}
+* + html .pun .codebox pre {
+padding-bottom : 10px;
+}
+.pun .codebox pre code {
+display : block;
+padding : 0.75em;
+}
+.pun .codebox pre.vscroll {
+height : 32em;
+overflow : auto;
+}
+.pun .postmsg img {
+vertical-align : bottom;
+}
+.pun .postsignature hr {
+margin-left : 0;
+width : 75%;
+text-align : left;
+height : 1px;
+
+}
+.pun .postmsg .postimg img {
+max-width : 98%;
+vertical-align : middle;
+}
+.pun .postmsg .postimg a:link img, .pun .postmsg .postimg a:visited img {
+border-style : solid;
+border-width : 2px;
+}
+.pun .blockpost label {
+vertical-align : bottom;
+display : inline-block;
+}
+.pun .blockpost label * {
+vertical-align : middle;
+margin : 0;
+padding : 0;
+}
+#punhelp h2 {
+margin-top : 12px;
+}
+#punhelp div.box {
+padding : 10px;
+}
+.pun {
+color : #d4d4d4;
+}
+#postpreview, #brdfooter #modcontrols, #adminconsole fieldset td, .pun .blockmenu .box, #adstats dd, .pun .quotebox {
+background-color : #424242;
+}
+.pun h2, #brdmenu {
+background-color : #565656;
+color : #d4d4d4;
+}
+.pun legend {
+color : #ffffff;
+}
+.pun .blockmenu li.isactive a {
+color : #d4d4d4;
+}
+.pun .postright, .pun .postfootright {
+border-left-color : transparent;
+}
+.pun .blockpost h2 span.conr {
+color : #a19e96;
+}
+.pun .box {
+border-color : #565656;
+}
+.pun td, #brdfooter #modcontrols {
+border-color : #565656;
+}
+.pun th, .pun fieldset {
+border-color : #484848;
+}
+.pun .quotebox, .pun .codebox, .pun .forminfo, .pun .blockpost label, .pun .deletemsg {
+border-color : #565656;
+}
+.pun a:link, .pun a:visited {
+color : #a7a9df;
+}
+.pun a:hover, .pun a:active, .pun a:focus {
+color : #ffffff;
+}
+.pun .postmsg .postimg a:link img, .pun .postmsg .postimg a:visited img {
+border-color : #a7a9df;
+}
+.pun .postmsg .postimg a:hover img, .pun .postmsg .postimg a:active img, .pun .postmsg .postimg a:focus img {
+border-color : #ffee40;
+}
+.pun h2 a:link, .pun h2 a:visited, #brdmenu a:link, #brdmenu a:visited {
+color : #d4d4d4;
+}
+.pun h2 a:hover, .pun h2 a:active, #brdmenu a:hover, #brdmenu a:active {
+color : #d4d4d4;
+}
+.pun .postreport a:link, .pun .postreport a:visited, .pun .iclosed td.tcl a:link, .pun .iclosed td.tcl a:visited {
+color : #888;
+}
+.pun .postreport a:hover, .pun .postreport a:active, .pun .iclosed td.tcl a:hover, .pun .iclosed td.tcl a:active {
+color : #aaa;
+}
+.pun .maintenancelink a:link, .pun .maintenancelink a:visited {
+color : #ff4000;
+}
+.pun .maintenancelink a:hover, .pun .maintenancelink a:active {
+color : #ff5010;
+}
+
+body {
+ position:relative;
+  margin:0;
+  -webkit-text-size-adjust:none;
+  min-height:416px;
+  font-family:helvetica,sans-serif;
+  -webkit-background-size:0.438em 100%;
+	background:	-webkit-gradient(linear, 0% 0%, 100% 0, from(#c5ccd4), to(#cbd2d8), color-stop(.714, #c5ccd4), color-stop(.714, #cbd2d8));
+	background:    -moz-repeating-linear-gradient(left 0deg, #c5ccd4, #c5ccd4 5px, #cbd2d8 5px, #cbd2d8 7px);
+	background:      -o-repeating-linear-gradient(     0deg, #c5ccd4, #c5ccd4 5px, #cbd2d8 5px, #cbd2d8 7px);
+	background:         repeating-linear-gradient(left 0deg, #c5ccd4, #c5ccd4 5px, #cbd2d8 5px, #cbd2d8 7px);
+  -webkit-touch-callout:none;
+  text-color: black;
+  }
+
+@media screen and (max-width:320px)
+	{ 
+#brdtitle, #brdtitle h1 { height:44px; }
+#brdtitle h1 {
+  line-height:44px;
+  font-size:16pt;
+  			}
+#punindex {
+min-width:480px;
+}
+  ; }
+@media screen and (max-width:321px) 
+	{ 
+#brdtitle, #brdtitle h1 { height:32px; }
+#brdtitle h1 { 
+  line-height:32px;
+  font-size:13pt; 
+  }
+#brdtitle img { 
+display: none; 
+  }
+
+#punindex {
+min-width:320px;
+}
+; }
+.pun .block2col .blockform, .pun .block2col .block {
+margin-left : 0;
+}
+.pun textarea, .pun input, .pun select {
+	font-size : 0.8em;
+	overflow : hidden;
+	margin-top : 5px;
+	font-size : medium;
+	border : 1px solid #878787;
+	background-color : white;
+	max-height : 200px;
+	color : black;
+	max-width: 250px;
+	padding: 0px 1px 0px;
+}
+
+#brdtitle, .pun thead {
+	position:relative;
+	left:0;
+	top:0;
+	color : white;
+	background:		-webkit-gradient(linear,0% 0%,0% 100%,from(rgba(133,133,133,0.7)),color-stop(3%,rgba(99,99,99,0.7)),color-stop(50%,rgba(32,32,32,0.7)),color-stop(51%,rgba(0,0,0,0.7)),color-stop(97%,rgba(0,0,0,0.7)),to(rgba(38,38,38,0.7)));
+	background:		-moz-linear-gradient(top, rgba(133,133,133,0.7) 0%, rgba(99,99,99,0.7) 3%,rgba(32,32,32,0.7) 50%,rgba(0,0,0,0.7) 51%,rgba(0,0,0,0.7) 97%);
+  }
+
+#brdtitle h1, #brdtitle h1 a {
+	position : absolute;
+	font-weight : bold;
+	top : 0;
+	left : 0;
+	right : 0;
+	padding : 0 10px;
+	text-align : center;
+	text-overflow:ellipsis;
+	white-space : nowrap;
+	overflow : hidden;
+	color : #fff;
+	text-shadow:rgba(0,0,0,0.6) 0 -1px 0;
+}
+#idx1 h2 span {
+position : relative;
+right : 20px;
+left : 9px;
+color : #4c4c4c;
+  text-shadow:#FFF 0 1px 0;
+padding : 1px 0 3px 8px;
+background-color : transparent;
+}
+.pun h2 {
+	background-color : transparent;
+	color : #4c4c4c;
+	text-shadow:#FFF 0 1px 0;
+}
+.pun .box, .pun inbox td {
+border : 0;
+background-color : transparent;
+color : black;
+}
+.pun .postfootright ul, .pun .postfootright div, .pun .postfootright p, .pun .postfootleft p {
+padding : 0 5px;
+}
+.pun {
+margin : 0;
+color : black;
+}
+#brdstats, div.pagepost, #quickpost .box, #brdfooter #modcontrols, #postform .box, .blockform .box, #punadmin #brdmain .block, #announce-block, #brdmain #msg .box, #posterror .box, #punredirect .box {
+  -webkit-border-radius:8px;
+  background-color:#fff;
+  border:1px solid #878787;
+  overflow:hidden;
+  padding:0;
+  position:relative;
+  display:block;
+  height:auto;
+  width:auto;
+  margin:3px 5px 7px;
+  list-style:none;
+  color: black;
+}
+#brdmain .tcr a {
+	font-size : 0.77em;
+	}
+#adminconsole fieldset td, #adstats dd {
+background-color : transparent;
+}
+div.pagepost, #announce-block {
+padding-left : 5px;
+padding-right : 5px;
+}
+#brdmenu li, .pun .blockmenu li {
+margin-right : 2px;
+padding-left : 2px;
+line-height : 20px;
+}
+.pun h1 {
+background-repeat : no-repeat;
+height : 0;
+}
+.pun #brdtitle p {
+height : 20px;
+}
+.pun #brdmenu {
+background-image : none;
+padding : 0;
+}
+div.linkst .conl, div.linksb .conl, div.postlinksb .conl {
+width : 6em;
+}
+
+p.modbuttons {
+width : 24em;
+}
+p.modbuttons input {
+width : auto;
+padding : 0 4px 0 4px;
+}
+.linkst ul, .linksb ul, .postlinksb ul {
+margin-left : 0;
+clear : left;
+}
+
+div.postleft, div.postfootleft {
+width : 100px;
+float : left;
+clear : both;
+}
+div.postleft {
+padding-bottom : 5px;
+max-width : 50px;
+width : 50px;
+}
+div.postright, div.postfootright {
+border-left-width : 0;
+border-left-style : solid;
+}
+div.postright {
+padding-top : 5px;
+padding-bottom : 5px;
+}
+div.block2col div.blockform, div.block2col div.block, #viewprofile dd {
+margin-left : 0;
+}
+.pun .blockmenu {
+float : none;
+width : 100%;
+}
+.blockform .rbox input {
+width : 25px;
+}
+.pubgoog, .box div.conr, .pun td p, .tc2, .tc3, .tcl td, #brdstats .conr, #brdwelcome .conl, div.postleft dd, div.postfootleft, .forumdesc, #brddesc, .bblinks, .pun #brdmenu #navindex, .pun #brdmenu #navuserlist, .multidelete strong, #brdtitle .logo {
+display : none;
+}
+#brdstats .conl, #brdfooter .conl {
+width : 25em;
+}
+div.blockmenu, #viewprofile dt {
+width : 100%;
+}
+.postleft img {
+max-width : 40px;
+max-height : 40px;
+}
+.pun td p {
+display : none;
+}
+.postleft img {
+max-width : 40px;
+max-height : 40px;
+}
+div.postright {
+border-left-width : 50px !important ;
+border-bottom-width : 0 !important ;
+}
+.postleft dt{
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  height:100px;
+  width:100px;
+  text-align:right;
+}
+.postsignature img {
+max-height : 70px;
+}
+.postsignature {
+min-height : 0;
+height : 75px;
+}
+.postfootleft, .postfootright {
+max-height : 20px;
+display : inline;
+}
+.postfootright {
+width : auto;
+}
+.usertitle {
+display : none !important ;
+color : red;
+max-height : 0;
+}
+.blockpost h2 span {
+	display : inline;
+	background : transparent;
+}
+.blockpost h2 {
+	background:-webkit-gradient(linear,0% 0%,0% 100%,from(rgba(133,133,133,0.7)),color-stop(3%,rgba(99,99,99,0.7)),color-stop(50%,rgba(32,32,32,0.7)),color-stop(51%,rgba(0,0,0,0.7)),color-stop(97%,rgba(0,0,0,0.7)),to(rgba(38,38,38,0.7)));
+  }
+.blockmenu .box .inbox ul li {
+display : inline;
+}
+
+#profile .blockform {
+float : none;
+margin-left : 0 !important ;
+
+margin-top : 20px;
+}
+input {
+
+	display:inline-block;
+	}
+.pun legend {
+color : #0077cc;
+}
+.postmsg {
+color : black;
+}
+.pun a:link, .pun a:visited {
+color : #0088cc;
+text-decoration : none;
+}
+.pun a:hover, .pun a:active, .pun a:focus {
+color : #0066cc;
+}
+.pun .postmsg .postimg a:link img, .pun .postmsg .postimg a:visited img {
+border-color : #f6b620;
+}
+.pun .postmsg .postimg a:hover img, .pun .postmsg .postimg a:active img, .pun .postmsg .postimg a:focus img {
+border-color : #ffee40;
+}
+.pun .postreport a:link, .pun .postreport a:visited, .pun .iclosed td.tcl a:link, .pun .iclosed td.tcl a:visited {
+color : #888;
+}
+.pun .postreport a:hover, .pun .postreport a:active, .pun .iclosed td.tcl a:hover, .pun .iclosed td.tcl a:active {
+color : #aaa;
+}
+.pun .maintenancelink a:link, .pun .maintenancelink a:visited {
+color : #ff4000;
+}
+.pun .maintenancelink a:hover, .pun .maintenancelink a:active {
+color : #ff5010;
+}
+.pun #brdmenu {
+text-align : center;
+}
+#onlinelist dd, #onlinelist dt {
+  display : inline;
+}
+/* Boutton style iPhone from http://mwhenry.com/blog/2009/11/shiny-css-only-iphone-buttons/ */
+input[type=submit] {
+      font-family : "Helvetica Neue", Helvetica, sans-serif;
+      font-size : 0.75em;
+      font-weight : bold;
+      width : auto;
+      height : 22px;
+      padding : 2px;
+      border : 1px solid #282726;
+      background : -webkit-gradient( linear, left top, left bottom, from(#e2e2e2), to(#8c8a88), color-stop(0.55, #acadae), color-stop(0.55, #82807e) );
+      margin : 0 0 3px 0;
+      -webkit-background-origin : padding-box;
+      -webkit-background-clip : border-box;
+      -webkit-border-radius : 8px;
+				}
+input[type=submit]:hover, input[type=submit].cancel,input[type=submit]:active, input[type=submit].cancel:active {
+      color: #fff;
+      text-shadow : none;
+    			}
+input[type=submit]:hover, input[type=submit].cancel:hover {
+      background: -webkit-gradient( linear, left top, left bottom, from(#aaaee5), to(#10006d), color-stop(0.55, #1F3B97), color-stop(0.55, #081f6f) );
+    			}
+input[type=submit].cancel {
+      background: -webkit-gradient( linear, left top, left bottom, from(#5c5c5b), to(#1e1b16), color-stop(0.2, #1e1b16) );
+      margin-top: 6px;
+    			}
+.pun #brdwelcome .conl span strong {
+	display : inline;
+	}p.buttons input[type=submit] {
+	width: 96%;
+      font-size: 1.2em;
+				}
+/* Icon Statut */
+.pun .icon {
+	display:inline-block;
+	font-size:14px;
+	font-weight:bold;
+	font-family:Helvetica, Verdana, Geneva, sans-serif;
+	height:12px;
+	background:;
+	color:#FFF;
+	border-radius:16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border:solid 3px #FFF;
+	line-height:18px;
+	padding:0 6px;
+	box-shadow: 0px 2px 2px #666;
+	float: left;
+	border-color: #484848 #404040 #3c3c3c #444444
+}.pun .icon div {	position: absolute;	left: -9999em;	text-indent: -9999em;	height: 0;	}.pun .iredirect .icon {
+		background: #f88b00;	}.pun .inew .icon {
+		background:#00f800;	}
+.pun .iclosed .icon {
+	background:#222;	border-color: black #111	}
+#adminconsole input, #adminconsole select, #adminconsole fieldset td span, #adminconsole fieldset th span {
+	max-width: 175px;
+
+}
+#adminconsole fieldset th {
+	background-color: transparent;
+	max-width: 70px;
+	color: black;
+	padding: 0;
+}
+li#navprofile {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	font-family : "Helvetica Neue", Helvetica, sans-serif;
+	font-size : 1.2em;
+	font-weight : bold;
+	padding : 4px;
+	border : 1px solid grey;
+      background: -webkit-gradient( linear, left top, left bottom, from(#aaaee5), to(#10006d), color-stop(0.55, #1F3B97), color-stop(0.55, #081f6f) );
+	-webkit-background-origin : padding-box;
+	-webkit-background-clip : border-box;
+	-webkit-border-radius : 8px;
+}
+li#navpm {
+	position: absolute;
+	right: 2px;
+	top: 3px;
+	font-family : "Helvetica Neue", Helvetica, sans-serif;
+	font-size : 1.5em;
+	font-weight : bold;
+	padding : 4px 4px 4px 4px;
+	border : 1px solid grey;
+	background: -webkit-gradient( linear, left top, left bottom, from(#aaaee5), to(#10006d), color-stop(0.55, #1F3B97), color-stop(0.55, #081f6f) );
+	-webkit-background-origin : padding-box;
+	-webkit-background-clip : border-box;
+	-webkit-border-radius : 8px;
+}

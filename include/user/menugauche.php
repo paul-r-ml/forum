@@ -3,7 +3,7 @@
   <li class="accueil"><a href="/wiki/doku.php?id=accueil" title="accueil">Accueil du site</a></li>
 
 
-  <li><a href="/wiki/doku.php?id=presentation:sommaire" title="presentation:sommaire">Présentation</a></li>
+  <li><a href="/wiki/doku.php?id=presentation:sommaire" title="presentation:sommaire">Découverte</a></li>
   <ul class="level2">
 	  <li><a href="/wiki/doku.php?id=presentation:debuter" title="presentation:debuter">Débuter</a></li>
 	  <li><a href="/wiki/doku.php?id=faq_de_la_randonnee_legere_mul" title="faq_de_la_randonnee_legere_mul">Faq</a></li>
@@ -19,6 +19,8 @@
   <li><a href="/wiki/doku.php?id=accueil_du_wiki" title="accueil_du_wiki">Wiki</a></li>
   <ul class="level2">
 	  <li class="level3"><a href="/wiki/doku.php?do=recent" title="Derniers changements">Derniers changements</a></li>
+	  <li class="level3"><a href="/wiki/doku.php?id=index_thematique" title="Index thématique">- Index thématique</a></li>
+	  <li class="level3"><a href="/wiki/doku.php?id=topics_uniques" title="Liste TU">- Liste des TU</a></li>
 	  <li><a href="/wiki/doku.php?id=sommaire_fiches_conseil" title="sommaire_fiches_conseil">Conseils</a></li>
 	  <li><a href="/wiki/doku.php?id=sommaire_bricolage" title="sommaire_bricolage">Bricolage</a></li>
 	  <li><a href="/wiki/doku.php?id=mesures_du_poids_du_materiel" title="mesures_du_poids_du_materiel">Poids</a></li>
