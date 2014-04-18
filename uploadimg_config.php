@@ -51,6 +51,7 @@ $Allow_Uploads[] = "Membre du bureau de l'association";
 $Allow_Uploads[] = "Testeurs";
 $Allow_Uploads[] = "Groupe rien que pour Nutzzz";
 $Allow_Uploads[] = "PRO";
+$Allow_Uploads[] = "Developpeurs";
 
 /*
 The permission setting allows you to have full control over who can upload images.
@@ -106,7 +107,8 @@ $Allow_Delete[] = "Membre des projets site + association";
 $Allow_Delete[] = "Membre du comite directeur ou invite";
 $Allow_Delete[] = "Membre du bureau de l'association";
 $Allow_Delete[] = "Testeurs";
-$Allow_Uploads[] = "Groupe rien que pour Nutzzz";
-$Allow_Uploads[] = "PRO";
+$Allow_Delete[] = "Groupe rien que pour Nutzzz";
+$Allow_Delete[] = "PRO";
+$Allow_Delete[] = "Developpeurs";
 
 ?>
