@@ -64,3 +64,64 @@ html>body #menugauche {
   text-decoration: underline;
   color: #b50000;
 }
+
+
+/* Tablet Landscape
+-------------------------------------------*/
+
+/*  As the screen is smaller we dont have room for the sidebar anymore. Lets hide it. */
+
+@media only screen and (max-width: 768px) {
+
+	#menugauche {
+/*		position: fixed!important;*/
+		z-index:101;
+		top: 0;
+		right: 0;
+		color: white;
+		background: #9AACBC;
+		transition: height 0s;
+		height: 24px;
+		width: 23px;
+		overflow: hidden;
+		font: 90% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+	}
+
+	#menugauche.open {
+		height: 100%;
+		width:93%;
+		background: #f6f6f6;
+	}
+
+	.openmenugauche {
+		width: 27px;
+		height: 25px;
+		padding: 0 2px;
+	}
+
+	.openmenugauche div {
+		background: #f6f6f6;
+		height: 3px;
+		margin: 3px;
+	}
+	.openmenugauche.open div {
+	  background: #9AACBC;
+	}
+
+	.menu {
+	  height: 0;
+	  transition: margin 0s, height 0s;
+	  overflow: auto;
+	}
+
+	.menu.open {
+	  height: 95%;
+	  margin-top: 0;
+	  margin-bottom: -40px;
+	}
+
+	.pun.open{
+		display:none;
+	}
+
+}

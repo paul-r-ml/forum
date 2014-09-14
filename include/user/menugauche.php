@@ -1,4 +1,7 @@
 <div id="menugauche">
+<div class="openmenugauche"><div></div><div></div><div></div></div>
+<div class="menu">
+
 <ul class="level1">
   <li class="accueil"><a href="/wiki/doku.php?id=accueil" title="accueil">Accueil du site</a></li>
 
@@ -46,3 +49,7 @@
   </ul>
 </ul>
 </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="style/imports/menu.js"></script>
