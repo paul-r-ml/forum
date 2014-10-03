@@ -41,6 +41,7 @@ $re_list = '%\[list(?:=([1a*]))?+\]((?:[^\[]*+(?:(?!\[list(?:=[1a*])?+\]|\[/list
 // Here you can add additional smilies if you like (please note that you must escape single quote and backslash)
 require PUN_ROOT.'plugins/ezbbc/ezbbc_smilies1.php';
 
+
 //
 // Make sure all BBCodes are lower case and do a little cleanup
 //
@@ -126,7 +127,7 @@ function strip_empty_bbcode($text, &$errors)
 		list($inside, $text) = extract_blocks($text, '[code]', '[/code]', $errors);
 
 	// Remove empty tags
-	while (($new_text = preg_replace('%\[(b|u|s|ins|del|em|i|h|colou?r|quote|img|url|email|list|topic|post|forum|user)(?:\=[^\]]*)?\]\s*\[/\1\]%', '', $text)) !== NULL)
+	while (($new_text = preg_replace('%\[(b|u|s|ins|del|em|i|h|colou?r|quote|rltable|img|url|email|list|topic|post|forum|user)(?:\=[^\]]*)?\]\s*\[/\1\]%', '', $text)) !== NULL)
 	{
 		if ($new_text != $text)
 			$text = $new_text;
@@ -169,7 +170,7 @@ function preparse_tags($text, &$errors, $is_signature = false)
 	// Start off by making some arrays of bbcode tags and what we need to do with each one
 
 	// List of all the tags
-	$tags = array('quote', 'code', 'b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'url', 'email', 'img', 'list', '*', 'h', 'topic', 'post', 'forum', 'user');
+	$tags = array('quote', 'code', 'b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'url', 'email', 'img', 'list', '*', 'h', 'topic', 'post', 'forum', 'user', 'rltable');
 	// List of tags that we need to check are open (You could not put b,i,u in here then illegal nesting like [b][i][/b][/i] would be allowed)
 	$tags_opened = $tags;
 	// and tags we need to check are closed (the same as above, added it just in case)
@@ -179,7 +180,7 @@ function preparse_tags($text, &$errors, $is_signature = false)
 	// Tags to ignore the contents of completely (just code)
 	$tags_ignore = array('code');
 	// Block tags, block tags can only go within another block tag, they cannot be in a normal tag
-	$tags_block = array('quote', 'code', 'list', 'h', '*');
+	$tags_block = array('quote', 'code', 'list', 'h', '*', 'rltable');
 	// Inline tags, we do not allow new lines in these
 	$tags_inline = array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'h', 'topic', 'post', 'forum', 'user');
 	// Tags we trim interior space
@@ -197,6 +198,7 @@ function preparse_tags($text, &$errors, $is_signature = false)
 		'forum' => array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'img'),
 		'user'  => array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'img'),
 		'img' 	=> array(),
+		'rltable' => array('b','i','u','s','color','colour'),
 		'h'		=> array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'url', 'email', 'topic', 'post', 'forum', 'user'),
 	);
 	// Tags we can automatically fix bad nesting
@@ -698,6 +700,31 @@ function handle_list_tag($content, $type = '*')
 }
 
 
+// SPECIFIQUE RL
+// Fonction de traitement pour les tableaux
+function handle_rltable($colspec, $content){
+  $align = array("l" => "left", "c" => "center", "r" => "right");
+  $columns=str_split($colspec);
+  $width=count($columns);
+  $lines=explode("\n", $content);
+  $output="<table class='rl-table'>";
+  foreach ($lines as $l_i => $line) {
+    $output .= "<tr>";
+    $l = trim($line);
+    $cells = explode("|", $l);
+    if ($l == "")
+      $output .= "<td class='blank-cell' colspan='" . $width . "'>&nbsp;</td>";
+    else if (count($cells) !== $width) // ligne spéciale, on fait une cellule unique
+      $output .= "<td class='mono-cell' colspan='" . $width . "'>" . $l . "</td>";
+    else  // ligne normale, on transforme en cellules
+      foreach ($cells as $c_i => $cell)
+	$output .= "<td style='text-align:" . $align[$columns[$c_i]] . ";'>" . trim($cell) . '</td>';
+    $output .= "</tr>";
+  }
+  $output .= "</table>";
+  return $output;
+}
+
 //
 // Convert BBCodes to their HTML equivalent
 //
@@ -738,6 +765,8 @@ function do_bbcode($text, $is_signature = false)
 	$replace[] = '<span style="color: $1">$2</span>';
 	$replace[] = '</p><h5>$1</h5><p>';
 
+
+
 	if (($is_signature && $pun_config['p_sig_img_tag'] == '1') || (!$is_signature && $pun_config['p_message_img_tag'] == '1'))
 	{
 		$pattern[] = '%\[img\]((ht|f)tps?://)([^\s<"]*?)\[/img\]%e';
@@ -753,6 +782,10 @@ function do_bbcode($text, $is_signature = false)
 			$replace[] = 'handle_img_tag(\'$2$4\', false, \'$1\')';
 		}
 	}
+
+	// Les tableaux
+	$pattern[] = '%\[rltable=([lcr]+)\]\n(.*?)\n\[/rltable\]%mse';
+	$replace[] = 'handle_rltable(\'$1\',\'$2\')';
 
 	$pattern[] = '%\[url\]([^\[]*?)\[/url\]%e';
 	$pattern[] = '%\[url=([^\[]+?)\](.*?)\[/url\]%e';
