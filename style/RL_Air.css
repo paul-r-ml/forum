@@ -1621,20 +1621,28 @@ li.reportlink a:visited{color: green}
 
 .pun .postmsg table.rl-table {
   width: auto;
+  margin-left: 15px;
+}
+
+.pun .postmsg table.rl-table tr:hover {
+  background: lightyellow;
 }
 
 .pun .postmsg table.rl-table td {
-  border: 1px solid #9aacbc;
-  padding: 2px 5px 2px 5px;
+  border: 1px solid #CCCCCC;
+  padding: 2px 5px 1px 5px;
+  background-color: rgba(255,255,255,0.3);
 }
 
 .pun .postmsg table.rl-table td.blank-cell {
   border: none;
   line-height: 0.3em;
+  background-color: transparent;
 }
 
 .pun .postmsg table.rl-table td.mono-cell {
   font-weight: bold;
+  border-bottom: 2px solid #9aacbc;
 }
 
 /* Main Forms + Profile
