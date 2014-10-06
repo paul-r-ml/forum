@@ -198,7 +198,7 @@ function preparse_tags($text, &$errors, $is_signature = false)
 		'forum' => array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'img'),
 		'user'  => array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'img'),
 		'img' 	=> array(),
-		'rltable' => array('b','i','u','s','color','colour'),
+		'rltable' => array('b','i','u','s', 'url'),
 		'h'		=> array('b', 'i', 'u', 's', 'ins', 'del', 'em', 'color', 'colour', 'url', 'email', 'topic', 'post', 'forum', 'user'),
 	);
 	// Tags we can automatically fix bad nesting
