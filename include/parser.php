@@ -711,7 +711,7 @@ function handle_rltable($colspec, $content){
   foreach ($lines as $l_i => $line) {
     $output .= "<tr>";
     $l = trim($line);
-    $cells = explode("|", $l);
+    $cells = preg_split("#[|\t]#", $l);
     if ($l == "")
       $output .= "<td class='blank-cell' colspan='" . $width . "'>&nbsp;</td>";
     else if (count($cells) !== $width) // ligne spéciale, on fait une cellule unique
