@@ -82,6 +82,9 @@
 #ezbbctoolbar a#code {
 	background: url(images/toolbar.png) no-repeat -260px 0;
 }
+#ezbbctoolbar a#rltable {
+	background: url(images/rltable.png) no-repeat 0 0;
+}
 #ezbbctoolbar a#ulist {
 	background: url(images/toolbar.png) no-repeat -280px 0;
 }
