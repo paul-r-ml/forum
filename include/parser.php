@@ -713,7 +713,7 @@ function handle_rltable($colspec, $content){
     $l = trim($line);
     if (substr($l, 0, 1) == "^") { // on teste si c'est un header
       $header=true;
-      $l = substr($l, 1);
+      $l = trim(substr($l, 1));
       $output .= "<tr class='header'>"; } 
     else { $output .= "<tr>"; }
     $cells = explode("|", $l);
