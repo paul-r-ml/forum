@@ -1640,7 +1640,8 @@ li.reportlink a:visited{color: green}
   background-color: transparent;
 }
 
-.pun .postmsg table.rl-table td.mono-cell {
+.pun .postmsg table.rl-table td.mono-cell,
+.pun .postmsg table.rl-table tr.header td {
   font-weight: bold;
   border-bottom: 2px solid #9aacbc;
 }

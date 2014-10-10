@@ -709,9 +709,14 @@ function handle_rltable($colspec, $content){
   $lines=explode("\n", $content);
   $output="<table class='rl-table'>";
   foreach ($lines as $l_i => $line) {
-    $output .= "<tr>";
+    $header=false;
     $l = trim($line);
-    $cells = preg_split("#[|\t]#", $l);
+    if (substr($l, 0, 1) == "^") { // on teste si c'est un header
+      $header=true;
+      $l = substr($l, 1);
+      $output .= "<tr class='header'>"; } 
+    else { $output .= "<tr>"; }
+    $cells = explode("|", $l);
     if ($l == "")
       $output .= "<td class='blank-cell' colspan='" . $width . "'>&nbsp;</td>";
     else if (count($cells) !== $width) // ligne spéciale, on fait une cellule unique
